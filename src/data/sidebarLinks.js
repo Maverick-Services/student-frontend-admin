@@ -23,7 +23,7 @@ export const sideBarLinks = [
         name: "Teams",
         path: "/dashboard/teams"
     },
-    {
-        name: "Logout"
-    }
+    // {
+    //     name: "Logout"
+    // }
 ]
