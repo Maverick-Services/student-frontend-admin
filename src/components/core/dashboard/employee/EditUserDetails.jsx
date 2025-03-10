@@ -4,11 +4,12 @@ import { AuthContext } from '../../../../Context/AuthContext';
 import { useParams } from 'react-router-dom';
 import { AddUser } from './AddUser';
 import { ROLE } from '../../../../utils/constants';
+import { fetchCompleteUserDetails } from '../../../../services/operations/userAPI';
 
 export const EditUserDetails = () => {
 
   const {empId} = useParams();
-  const {employees,setEmployees,user,editUser,setUser,setEditUser,loading,setLoading} = useContext(AuthContext);
+  const {user,editUser,setUser,setEditUser,loading,setLoading,token} = useContext(AuthContext);
 
   const {
     handleSubmit,
@@ -19,11 +20,13 @@ export const EditUserDetails = () => {
     formState : {errors}
   } = useForm();
 
-  const fetchUserDetails = ()=>{
+  const fetchUserDetails = async()=>{
     setLoading(true);
     // console.log(userId);
     // const result = null;
-    const result = employees?.filter(em => em?._id == empId)[0];
+    // const result = employees?.filter(em => em?._id == empId)[0];
+
+    const result = await fetchCompleteUserDetails({userId:empId},token);
 
     // const result = {
     //   name: "Abhay",
@@ -42,7 +45,7 @@ export const EditUserDetails = () => {
   useEffect(()=>{
     // console.log(editUser)
     if(empId){
-        fetchUserDetails();
+      fetchUserDetails();
     }
   },[empId])
 

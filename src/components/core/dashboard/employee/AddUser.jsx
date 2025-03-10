@@ -6,12 +6,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ROLE } from "../../../../utils/constants";
 import { fetchAllTeams } from "../../../../services/operations/teamAPI";
 import { Spinner } from "../../../common/Spinner";
-import { createUser } from "../../../../services/operations/userAPI";
+import { createUser, editUserDetails } from "../../../../services/operations/userAPI";
 
 export const AddUser = ({ user, editUser }) => {
 
   const navigate = useNavigate();
-  const { token, employees, setEmployees, setUser, setLoading, loading } = useContext(AuthContext);
+  const { token, setLoading, loading } = useContext(AuthContext);
   const [teams,setTeams] = useState([]);
   const [currentRole, setCurrentRole] = useState(ROLE.EMPLOYEE);
 
@@ -56,7 +56,9 @@ export const AddUser = ({ user, editUser }) => {
     if (editUser) {
       if (isFormUpdated()) {
         const currentValues = getValues();
-        let reqBody = {};
+        let reqBody = {
+          userId: user?._id,
+        };
 
         if (currentValues?.name !== user?.name)
           reqBody = { ...reqBody, name: data?.name };
@@ -65,18 +67,12 @@ export const AddUser = ({ user, editUser }) => {
         if (currentValues?.phoneNo !== user?.phoneNo)
           reqBody = { ...reqBody, phoneNo: data?.phoneNo };
 
-        console.log("edit", reqBody);
-        const result = reqBody;
+        // console.log("edit", reqBody);
+        const result = await editUserDetails(reqBody, token);
         if (result) {
-          const updatedUser = { ...user, ...result };
-          setUser(updatedUser);
-
-          const userIndex = employees?.findIndex((em) => em?._id === updatedUser?._id);
-          let userData = employees;
-          userData[userIndex] = { ...updatedUser };
-          setEmployees(userData);
           navigate("/dashboard/users");
         }
+        return;
       } else {
         alert("No Changes Made So far");
         return;
@@ -127,14 +123,17 @@ export const AddUser = ({ user, editUser }) => {
         </div>
 
         {/* Email Field */}
-        <div className="flex flex-col gap-1">
-          <label className="text-gray-600 font-medium">Email</label>
-          <input
-            type="email"
-            {...register("email", { required: true })}
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
-          />
-        </div>
+        {
+          !editUser &&
+          <div className="flex flex-col gap-1">
+            <label className="text-gray-600 font-medium">Email</label>
+            <input
+              type="email"
+              {...register("email", { required: true })}
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
+            />
+          </div>
+        }
 
         {/* Phone Number Field */}
         <div className="flex flex-col gap-1">

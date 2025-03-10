@@ -99,30 +99,33 @@ export const fetchAllEmployees = async(token)=>{
     }
 }
 
-// export const fetchCompleteTaskDetails = async(formData)=>{
-//     let toastId = toast.loading("fetching details");
-//     try {
-//         const response = await apiConnector(
-//             "POST",
-//             FETCH_COMPLETE_TASK_DETAILS_API,
-//             formData,
-//         );
+export const fetchCompleteUserDetails = async(formData,token)=>{
+    let toastId = toast.loading("fetching details");
+    try {
+        const response = await apiConnector(
+            "POST",
+            FETCH_COMPLETE_USER_DETAILS_API,
+            formData,
+            {
+                "Authorization":`Bearer ${token}`
+            }
+        );
 
-//         if(!response?.data?.success){
-//             throw new Error(response?.data?.message);
-//         }
+        if(!response?.data?.success){
+            throw new Error(response?.data?.message);
+        }
 
-//         toast.dismiss(toastId);
-//         // console.log("FETCH_COMPLETE_TASK_DETAILS_API_RESPONSE",response);
-//         return response?.data?.data;
+        // console.log("FETCH_COMPLETE_USER_DETAILS_API_RESPONSE",response);
+        toast.dismiss(toastId);
+        return response?.data?.data;
 
-//     } catch (err) {
-//         console.log("FETCH_COMPLETE_TASK_DETAILS_API_ERROR",err);
-//         toast.dismiss(toastId);
-//         toast.error(err?.response?.data?.message || err?.message);
-//         return null;
-//     }
-// }
+    } catch (err) {
+        console.log("FETCH_COMPLETE_USER_DETAILS_API_ERROR",err);
+        toast.dismiss(toastId);
+        toast.error(err?.response?.data?.message || err?.message);
+        return null;
+    }
+}
 
 // export const createStep = async(formData,token)=>{
 //     let toastId = toast.loading("Creating Step")
