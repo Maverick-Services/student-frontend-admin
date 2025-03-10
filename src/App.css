@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow: hidden;
+}
+
+#wrapper{
+  width: 100vw;
+  height: 100vh;
+}
+
+.container{
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
