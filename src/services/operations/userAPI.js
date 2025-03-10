@@ -41,7 +41,7 @@ export const createUser = async(formData,token)=>{
 }
 
 export const editUserDetails = async(formData,token)=>{
-    let toastId = toast.loading("Editing User");
+    let toastId = toast.loading("Saving Changes");
     try {
         
         const response = await apiConnector(
@@ -57,7 +57,7 @@ export const editUserDetails = async(formData,token)=>{
             throw new Error(response?.data?.message);
         }
 
-        console.log("EDIT_USER_API_RESPONSE:",response);
+        // console.log("EDIT_USER_API_RESPONSE:",response);
         toast.dismiss(toastId);
         toast.success(response?.data?.message);       
         return response?.data?.data;
@@ -88,7 +88,7 @@ export const fetchAllEmployees = async(token)=>{
 
         // console.log("FETCH_ALL_EMPLOYEES_API_RESPONSE:",response);
         toast.dismiss(toastId);
-        toast.success(response?.data?.message);
+        // toast.success(response?.data?.message);
         return response?.data?.data;
         
     } catch (err) {

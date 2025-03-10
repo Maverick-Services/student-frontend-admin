@@ -41,7 +41,7 @@ export const createTeam = async(formData,token)=>{
 }
 
 export const editTeamDetails = async(formData,token)=>{
-    let toastId = toast.loading("Editing Team")
+    let toastId = toast.loading("Saving Changes")
     try {
         
         const response = await apiConnector(
@@ -87,7 +87,7 @@ export const fetchAllTeams = async(token)=>{
         }
 
         // console.log("FETCH_ALL_TEAMS_API_RESPONSE:",response);
-        toast.success(response?.data?.message);
+        // toast.success(response?.data?.message);
         return response?.data?.data;
         
     } catch (err) {
