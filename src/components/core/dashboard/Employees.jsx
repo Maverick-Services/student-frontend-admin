@@ -53,7 +53,7 @@ const Employees = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-fit flex flex-col gap-3"
+              className="flex flex-col items-start gap-3"
             >
               <Link to={`/dashboard/users/${em?._id}`}>
                 <div className="w-full bg-white shadow-lg rounded-lg p-6 flex flex-col gap-2 transition-all hover:shadow-xl">

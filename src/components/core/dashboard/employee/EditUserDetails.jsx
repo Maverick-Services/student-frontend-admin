@@ -1,39 +1,22 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { AuthContext } from '../../../../Context/AuthContext';
 import { useParams } from 'react-router-dom';
 import { AddUser } from './AddUser';
 import { ROLE } from '../../../../utils/constants';
 import { fetchCompleteUserDetails } from '../../../../services/operations/userAPI';
+import { ShowUserDetails } from './ShowUserDetails';
 
 export const EditUserDetails = () => {
 
   const {empId} = useParams();
   const {user,editUser,setUser,setEditUser,loading,setLoading,token} = useContext(AuthContext);
-
-  const {
-    handleSubmit,
-    register,
-    reset,
-    getValues,
-    setValue,
-    formState : {errors}
-  } = useForm();
+  const [showUserDetails, setShowUserDetails] = useState(true);
 
   const fetchUserDetails = async()=>{
     setLoading(true);
-    // console.log(userId);
-    // const result = null;
-    // const result = employees?.filter(em => em?._id == empId)[0];
 
     const result = await fetchCompleteUserDetails({userId:empId},token);
-
-    // const result = {
-    //   name: "Abhay",
-    //   email: "abhaygupta.kiit@gmail.com",
-    //   phoneNo: "8700381153",
-    //   role: ROLE.EMPLOYEE
-    // }
 
     if(result){
       setUser(result);
@@ -57,6 +40,12 @@ export const EditUserDetails = () => {
   return (
     <div className='w-full h-full'>
       {
+        showUserDetails && user &&
+        <ShowUserDetails user={user} showUserDetails={showUserDetails} setShowUserDetails={setShowUserDetails} />
+      }
+
+      {
+        !showUserDetails &&
         editUser && user && 
         <AddUser user={user} editUser={editUser}/>
       }
