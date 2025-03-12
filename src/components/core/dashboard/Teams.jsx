@@ -34,63 +34,78 @@ const Teams = () => {
           className="text-3xl font-bold text-[#1C398E] mb-8 text-center"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
           All Teams
         </motion.h1>
 
         {/* Teams Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full h-full">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
+        >
           {teams && teams.length === 0 ? (
             <p className="text-center text-gray-500 text-lg col-span-full">
               No Teams created yet
             </p>
           ) : (
             teams.map((ts, index) => (
-              <Link key={ts?._id} to={`/dashboard/teams/${ts?._id}`} className="w-full h-full">
-                {/* Animated Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.05, delay: index * 0.1 }}
-                  className="flex flex-col h-full bg-white rounded-lg shadow border border-gray-200 p-6 hover:shadow-md transition duration-300"
-                >
-                  {/* Team Name */}
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                    {ts?.teamName}
-                  </h3>
+              <motion.div
+                key={ts?._id}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                }}
+                whileHover={{
+                  scale: 1.03, // Reduced scale effect
+                  boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.15)", // Softer hover shadow
+                  transition: { duration: 0.3 },
+                }}
+                className="w-full h-auto flex flex-col"
+              >
+                <Link to={`/dashboard/teams/${ts?._id}`} className="w-full">
+                  <div className="flex flex-col h-full bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-xl transition-all min-h-[160px]">
+                    {/* Team Name */}
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                      {ts?.teamName}
+                    </h3>
 
-                  {/* Team Leader */}
-                  {ts?.teamLeader && (
+                    {/* Team Leader */}
+                    {ts?.teamLeader && (
+                      <p className="text-sm text-gray-600 mb-1">
+                        <span className="font-medium">Team Leader:</span>{" "}
+                        {ts?.teamLeader?.name}
+                      </p>
+                    )}
+
+                    {/* Team Members */}
                     <p className="text-sm text-gray-600 mb-1">
-                      <span className="font-medium">Team Leader:</span>{" "}
-                      {ts?.teamLeader?.name}
+                      <span className="font-medium">Team Members:</span>{" "}
+                      {ts?.members?.length || 0}
                     </p>
-                  )}
 
-                  {/* Team Members */}
-                  <p className="text-sm text-gray-600 mb-1">
-                    <span className="font-medium">Team Members:</span>{" "}
-                    {ts?.members?.length || 0}
-                  </p>
+                    {/* Total Tasks */}
+                    <p className="text-sm text-gray-600 mb-1">
+                      <span className="font-medium">Total Tasks:</span>{" "}
+                      {ts?.tasks?.length || 0}
+                    </p>
 
-                  {/* Total Tasks */}
-                  <p className="text-sm text-gray-600 mb-1">
-                    <span className="font-medium">Total Tasks:</span>{" "}
-                    {ts?.tasks?.length || 0}
-                  </p>
-
-                  {/* Tasks Completed */}
-                  <p className="text-sm text-gray-600 mt-auto">
-                    <span className="font-medium">Tasks Completed:</span>{" "}
-                    {ts?.tasks?.filter((t) => t?.status === STATUS.COMPLETED).length || 0}
-                  </p>
-                </motion.div>
-              </Link>
+                    {/* Tasks Completed */}
+                    <p className="text-sm text-gray-600 mt-auto">
+                      <span className="font-medium">Tasks Completed:</span>{" "}
+                      {ts?.tasks?.filter((t) => t?.status === STATUS.COMPLETED).length || 0}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
             ))
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

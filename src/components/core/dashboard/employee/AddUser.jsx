@@ -103,7 +103,7 @@ export const AddUser = ({ user, editUser }) => {
       className="w-full max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md"
     >
       {/* Heading */}
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">
+      <h1 className="text-2xl font-bold text-[#1C398E] mb-4">
         {editUser ? "Edit" : "Add"} User Profile
       </h1>
 

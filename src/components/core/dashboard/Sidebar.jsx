@@ -17,12 +17,12 @@ export const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
       >
         <IoClose/>
       </span>
-      <div className='flex flex-col gap-3'>
+      <div className='w-full flex flex-col gap-3'>
         {sideBarLinks.map((link, id) => (
           <Link
             key={id}
             to={link?.path || "#"}
-            className="flex items-center gap-2 py-2 px-4 rounded-md text-white font-medium transition duration-300 hover:bg-blue-700"
+            className="w-full flex items-center gap-2 py-2 px-4 rounded-md text-white font-medium transition duration-300 hover:bg-blue-700"
             onClick={() => setIsSidebarOpen(!isOpen)}
           >
             <FiChevronRight className="text-lg" />

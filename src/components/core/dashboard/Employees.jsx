@@ -11,27 +11,23 @@ const cardVariants = {
 };
 
 const Employees = () => {
-  
-  const {token, loading, setLoading} = useContext(AuthContext);
+  const { token, loading, setLoading } = useContext(AuthContext);
   const [employees, setEmployees] = useState([]);
 
-  const fetchEmployees = async()=>{
+  const fetchEmployees = async () => {
     setLoading(true);
     const result = await fetchAllEmployees(token);
-    if(result){
+    if (result) {
       setEmployees(result);
     }
-   
     setLoading(false);
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchEmployees();
-  },[]);
+  }, []);
 
-
-  if(loading || !employees)
-    return <Spinner/>
+  if (loading || !employees) return <Spinner />;
 
   return (
     <div className="w-full min-h-screen p-6 bg-gray-100 flex flex-col gap-6">
@@ -40,30 +36,39 @@ const Employees = () => {
       <motion.div
         initial="hidden"
         animate="visible"
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 h-full w-full"
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
       >
-        {employees && !employees.length ? (
-          <motion.p variants={cardVariants} className="text-gray-600 text-lg text-center col-span-full">
+        {employees && employees.length === 0 ? (
+          <motion.p
+            variants={cardVariants}
+            className="text-gray-600 text-lg text-center col-span-full"
+          >
             No Employees added yet
           </motion.p>
         ) : (
-            employees?.map((em) => (
+          employees?.map((em) => (
             <motion.div
               key={em?._id}
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex flex-col items-start gap-3"
+              className="w-full max-w-[350px] flex-1 flex justify-center"
             >
-              <Link to={`/dashboard/users/${em?._id}`}>
-                <div className="w-full bg-white shadow-lg rounded-lg p-6 flex flex-col gap-2 transition-all hover:shadow-xl">
-                  <h3 className="text-lg font-semibold text-gray-800">Name: {em?.name}</h3>
-                  <p className="text-gray-600">{em?.email}</p>
+              <Link to={`/dashboard/users/${em?._id}`} className="w-full">
+                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col gap-2 transition-all hover:shadow-xl min-h-[230px] h-auto">
+                  <h3 className="text-lg font-semibold text-gray-800 break-words whitespace-normal">
+                    Name: {em?.name}
+                  </h3>
+                  <p className="text-gray-600 break-words whitespace-normal">
+                    {em?.email}
+                  </p>
                   <p className="text-gray-600">Mobile No: {em?.phoneNo}</p>
                   <p className="text-gray-600">Team: {em?.team?.teamName}</p>
                   <p className="text-gray-600">
                     Tasks Assigned:{" "}
-                    <span className="font-semibold text-[#1C398E]">{em?.tasks?.length}</span>
+                    <span className="font-semibold text-[#1C398E]">
+                      {em?.tasks?.length}
+                    </span>
                   </p>
                 </div>
               </Link>
