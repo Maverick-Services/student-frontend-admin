@@ -13,7 +13,7 @@ export const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
     >
       <span 
         className='self-end text-2xl font-bold sm:hidden'
-        onClick={() => setIsSidebarOpen(!isOpen)}
+        onClick={() => setIsSidebarOpen(false)}
       >
         <IoClose/>
       </span>
@@ -23,7 +23,7 @@ export const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
             key={id}
             to={link?.path || "#"}
             className="w-full flex items-center gap-2 py-2 px-4 rounded-md text-white font-medium transition duration-300 hover:bg-blue-700"
-            onClick={() => setIsSidebarOpen(!isOpen)}
+            onClick={() => setIsSidebarOpen(false)}
           >
             <FiChevronRight className="text-lg" />
             <span className={`${isOpen ? "block" : "hidden"} md:block`}>
