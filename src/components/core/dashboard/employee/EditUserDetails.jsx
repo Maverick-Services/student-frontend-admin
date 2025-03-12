@@ -48,7 +48,7 @@ export const EditUserDetails = () => {
       {
         !showUserDetails &&
         editUser && user && 
-        <AddUser user={user} editUser={editUser}/>
+        <AddUser user={user} editUser={editUser} showUserDetails={showUserDetails} setShowUserDetails={setShowUserDetails} />
       }
     </div>
   )

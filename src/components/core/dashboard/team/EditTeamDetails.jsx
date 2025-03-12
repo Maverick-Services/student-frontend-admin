@@ -58,7 +58,7 @@ export const EditTeamDetails = () => {
       {
         !showTeamDetails &&
         editTeam && team && employees &&
-        <AddTeam team={team} editTeam={editTeam} employees={employees} />
+        <AddTeam team={team} editTeam={editTeam} employees={employees} showTeamDetails={showTeamDetails} setShowTeamDetails={setShowTeamDetails} />
       }
     </div>
   )

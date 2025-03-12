@@ -6,7 +6,7 @@ import { ROLE } from "../../../../utils/constants";
 import { motion } from "framer-motion";
 import { createTeam, editTeamDetails } from "../../../../services/operations/teamAPI";
 
-export const AddTeam = ({ team, editTeam, employees }) => {
+export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTeamDetails }) => {
   const navigate = useNavigate();
   const { admin,token } = useContext(AuthContext);
 
@@ -88,10 +88,16 @@ export const AddTeam = ({ team, editTeam, employees }) => {
       className="w-full max-w-3xl p-8 mx-auto bg-white shadow-lg rounded-lg flex flex-col gap-6"
     >
       {/* Heading */}
-      <h1 className="font-bold text-3xl text-[#1C398E]">
-        {editTeam ? "Edit" : "Add"} Team
-      </h1>
-
+      <div className="w-full flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold text-[#1C398E]">{editTeam ? "Edit" : "Add"} Team</h1>
+        <button
+          onClick={() => setShowTeamDetails(!showTeamDetails)}
+          className="bg-[#1C398E] text-white px-4 py-2 rounded-md hover:bg-[#142A6E] transition"
+        >
+          Cancel
+        </button>
+      </div>
+      
       {/* Form */}
       <form
         className="flex flex-col gap-6"
