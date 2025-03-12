@@ -6,6 +6,7 @@ import { AddUser } from './AddUser';
 import { ROLE } from '../../../../utils/constants';
 import { fetchCompleteUserDetails } from '../../../../services/operations/userAPI';
 import { ShowUserDetails } from './ShowUserDetails';
+import { Spinner } from '../../../common/Spinner';
 
 export const EditUserDetails = () => {
 
@@ -34,7 +35,7 @@ export const EditUserDetails = () => {
 
 
   if(loading){
-    return <p>Loading ......</p>
+    return <Spinner/>
   }
 
   return (

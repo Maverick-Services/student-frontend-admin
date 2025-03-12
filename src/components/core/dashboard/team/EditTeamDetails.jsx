@@ -5,6 +5,7 @@ import { AddTeam } from './AddTeam';
 import { fetchCompleteTeamDetails } from '../../../../services/operations/teamAPI';
 import { fetchAllEmployees } from '../../../../services/operations/userAPI';
 import { ShowTeamDetails } from './ShowTeamDetails';
+import { Spinner } from '../../../common/Spinner';
 
 export const EditTeamDetails = () => {
 
@@ -45,7 +46,7 @@ export const EditTeamDetails = () => {
 
 
   if(loading){
-    return <p>Loading ......</p>
+    return <Spinner/>
   }
 
   return (
