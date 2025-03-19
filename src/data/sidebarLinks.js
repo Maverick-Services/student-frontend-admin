@@ -8,21 +8,33 @@ export const sideBarLinks = [
     //     path: "/dashboard/addAdmin"
     // },
     {
-        name: "Create User",
-        path: "/dashboard/addUser"
+        name: "Student",
+        path: "/dashboard/addStudent",
+        subtabs:[
+            {
+                name: "Add Student",
+                path: "/dashboard/addStudent"
+            },
+            {
+                name: "Modify Student",
+                path: "/dashboard/student"
+            },
+        ]
     },
     {
-        name: "Create Team",
-        path: "/dashboard/addTeam"
-    },
-    {
-        name: "Employees",
-        path: "/dashboard/users"
-    },
-    {
-        name: "Teams",
-        path: "/dashboard/teams"
-    },
+        name: "Class",
+        path: "/dashboard/addClass",
+        subtabs:[
+            {
+                name: "Add Class",
+                path: "/dashboard/addClass"
+            },
+            {
+                name: "Modify Class",
+                path: "/dashboard/class"
+            },
+        ]
+    }
     // {
     //     name: "Logout"
     // }

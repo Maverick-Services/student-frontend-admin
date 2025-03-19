@@ -32,8 +32,8 @@ const Dashboard = () => {
         }
 
         {/* Main Content */}
-        <div className="flex-grow overflow-x-hidden overflow-y-auto flex justify-center items-start pb-20  w-full h-full">
-          <div className="w-11/12 py-14 sm:py-8 bg-gray-200 rounded-lg">
+        <div className="flex-grow overflow-x-hidden overflow-y-auto flex bg-gray-100 justify-center items-start pb-20  w-full h-full">
+          <div className="w-11/12 py-14 sm:py-8 rounded-lg">
             <Outlet />
           </div>
         </div>

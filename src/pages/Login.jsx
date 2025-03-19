@@ -24,7 +24,7 @@ export const AdminLogin = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6 login-bg">
       {/* Left Section - Admin Panel Info */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}

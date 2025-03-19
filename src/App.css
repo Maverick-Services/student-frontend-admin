@@ -20,3 +20,10 @@ body{
   justify-content: center;
   align-items: center;
 }
+
+.login-bg{
+  background-image: url('assets/school.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

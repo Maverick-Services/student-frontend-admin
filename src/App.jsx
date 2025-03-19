@@ -37,12 +37,12 @@ function App() {
           <Route path='/dashboard/profile' element={<Profile/>}/>
           {/* <Route path='/dashboard/addAdmin' element={<AddAdmin/>}/> */}
           {/* <Route path='/dashboard/editAdminDetails/:userId' element={<EditAdminDetails/>}/> */}
-          <Route path='/dashboard/addUser' element={<AddUser/>}/>
+          <Route path='/dashboard/addStudent' element={<AddUser/>}/>
           <Route path='/dashboard/users/:empId' element={<EditUserDetails/>}/>
-          <Route path='/dashboard/users' element={<Employees/>}/>
-          <Route path='/dashboard/addTeam' element={<AddTeam/>}/>
+          <Route path='/dashboard/student' element={<Employees/>}/>
+          <Route path='/dashboard/addClass' element={<AddTeam/>}/>
           <Route path='/dashboard/teams/:teamId' element={<EditTeamDetails/>}/>
-          <Route path='/dashboard/teams' element={<Teams/>}/>
+          <Route path='/dashboard/class' element={<Teams/>}/>
           <Route
           path='*'
           element={<p>404 Error - Page Not Found</p>}
