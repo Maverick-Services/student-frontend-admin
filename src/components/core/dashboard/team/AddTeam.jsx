@@ -56,7 +56,8 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
 
         // console.log("edit", reqBody);
         // const result = true;
-        const result = await editTeamDetails(reqBody,token);
+        // const result = await editTeamDetails(reqBody,token);
+        const result = null;
         if (result) {
           navigate("/dashboard/teams");
           return;
@@ -73,7 +74,8 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
     };
     // console.log(data);
 
-    const response = await createTeam(data,token);
+    // const response = await createTeam(data,token);
+    const response = null;
     if (response) {
       // console.log("Team created Successfully", response);
       navigate("/dashboard/teams");
@@ -89,13 +91,15 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
     >
       {/* Heading */}
       <div className="w-full flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-[#1C398E]">{editTeam ? "Edit" : "Add"} Team</h1>
-        <button
+        <h1 className="text-2xl font-bold text-[#1C398E]">{editTeam ? "Edit" : "Add"} Class</h1>
+        {
+          editTeam && <button
           onClick={() => setShowTeamDetails(!showTeamDetails)}
           className="bg-[#1C398E] text-white px-4 py-2 rounded-md hover:bg-[#142A6E] transition"
         >
           Cancel
         </button>
+        }
       </div>
       
       {/* Form */}
@@ -105,7 +109,7 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
       >
         {/* Team Name */}
         <div className="flex items-center gap-4">
-          <label className="w-40 font-medium text-gray-700">Team Name</label>
+          <label className="w-40 font-medium text-gray-700">Class Name</label>
           <input
             type="text"
             {...register("teamName", { required: true })}
@@ -113,9 +117,9 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
           />
         </div>
 
-        {/* Team Description */}
+        {/* Class Monthly Fee */}
         <div className="flex items-center gap-4">
-          <label className="w-40 font-medium text-gray-700">Description</label>
+          <label className="w-40 font-medium text-gray-700">Monthly Fees</label>
           <input
             type="text"
             {...register("description", { required: true })}
@@ -124,7 +128,7 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
         </div>
 
         {/* Team Leader */}
-        {
+        {/* {
           editTeam && 
           <div className="flex items-center gap-4">
             <label className="w-40 font-medium text-gray-700">Team Leader</label>
@@ -149,7 +153,7 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
               }
             </select>
           </div>
-        }
+        } */}
 
         {/* Submit Button */}
         <motion.button

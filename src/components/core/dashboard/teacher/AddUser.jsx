@@ -8,8 +8,9 @@ import { Spinner } from "../../../common/Spinner";
 import { createUser, editUserDetails } from "../../../../services/operations/userAPI";
 import { CLASSES, ROUTES } from "../../../../utils/constants";
 import { ROLE } from "../../../../utils/constants";
+import { SUBJECTS } from './../../../../utils/constants';
 
-export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails }) => {
+export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails }) => {
 
   const navigate = useNavigate();
   const { token, setLoading, loading } = useContext(AuthContext);
@@ -107,7 +108,7 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
     >
       {/* Heading */}
       <div className="w-full flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-[#1C398E]">{editUser ? "Edit" : "Add"} Student</h1>
+        <h1 className="text-2xl font-bold text-[#1C398E]">{editUser ? "Edit" : "Add"} Teacher</h1>
         {
           editUser && <button
             onClick={() => setShowUserDetails(!showUserDetails)}
@@ -129,26 +130,6 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
           <input
             type="text"
             {...register("name", { required: true })}
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
-          />
-        </div>
-
-        {/* Fathers Name Field */}
-        <div className="flex flex-col gap-1">
-          <label className="text-gray-600 font-medium">Father's Name</label>
-          <input
-            type="text"
-            {...register("fatherName", { required: true })}
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
-          />
-        </div>
-
-        {/* Mothers Name Field */}
-        <div className="flex flex-col gap-1">
-          <label className="text-gray-600 font-medium">Mother's Name</label>
-          <input
-            type="text"
-            {...register("motherName", { required: true })}
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
           />
         </div>
@@ -201,28 +182,28 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
           </div>
         }
 
-        {/* ROUTE */}
+        {/* SUBJECT */}
         {
-          !editUser &&
+          // !editUser &&
           <div className="flex flex-col gap-1">
-          <label className="font-medium text-gray-700">Route</label>
+          <label className="font-medium text-gray-700">Subject</label>
           <select
-            {...register("route",{
+            {...register("subject",{
             required:{
                 value:true,
-                message:"Route is required"
+                message:"Subject is required"
             }
             })}
             defaultValue={currentRole}
             onChange={(e) => setCurrentRole(e.target.value)}
-            name="route"
-            id="route"
+            name="subject"
+            id="subject"
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
           >
             {
-              ROUTES.map((rt,index)=>{
-                  return <option key={index} value={rt?._id}>
-                        {rt?.route} - Fee: Rs.{rt?.fee}
+              Object.values(SUBJECTS).map((sj,index)=>{
+                  return <option key={index} value={sj}>
+                        {sj}
                       </option>
               })
             }

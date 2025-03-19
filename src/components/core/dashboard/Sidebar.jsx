@@ -10,7 +10,7 @@ export const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
 
   return (
     <div
-      className={`h-full p-4 flex flex-col gap-1 transition-all duration-300 ${
+      className={`h-full overflow-y-auto p-4 flex flex-col gap-1 transition-all duration-300 ${
         isOpen ? "w-[250px]" : "w-full"
       } bg-blue-900 text-white shadow-lg`}
     >

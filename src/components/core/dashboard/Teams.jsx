@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { STATUS } from "../../../utils/constants";
+import { CLASSES, STATUS } from "../../../utils/constants";
 import { AuthContext } from "../../../Context/AuthContext";
 import { fetchAllTeams } from "../../../services/operations/teamAPI";
 import { Spinner } from "../../common/Spinner";
 
 const Teams = () => {
-  const { token, loading, setLoading } = useContext(AuthContext);
-  const [teams, setTeams] = useState([]);
+  const { token, loading, setLoading, teams, setTeams } = useContext(AuthContext);
+  // const [] = useState(CLASSES);
 
   const fetchTeams = async () => {
     setLoading(true);
@@ -20,7 +20,7 @@ const Teams = () => {
   };
 
   useEffect(() => {
-    fetchTeams();
+    // fetchTeams();
     // eslint-disable-next-line
   }, []);
 
@@ -36,7 +36,7 @@ const Teams = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          All Teams
+          All Classes
         </motion.h1>
 
         {/* Teams Grid */}
@@ -51,12 +51,12 @@ const Teams = () => {
         >
           {teams && teams.length === 0 ? (
             <p className="text-center text-gray-500 text-lg col-span-full">
-              No Teams created yet
+              No Classes created yet
             </p>
           ) : (
-            teams.map((ts, index) => (
+            teams.map((cl, index) => (
               <motion.div
-                key={ts?._id}
+                key={cl?._id}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
@@ -68,37 +68,30 @@ const Teams = () => {
                 }}
                 className="w-full h-auto flex flex-col"
               >
-                <Link to={`/dashboard/teams/${ts?._id}`} className="w-full">
-                  <div className="flex flex-col h-full bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-xl transition-all min-h-[160px]">
+                <Link 
+                  to={"#"}
+                  // to={`/dashboard/class/${cl?._id}`} 
+                  className="w-full">
+                  <div className="flex flex-col h-full bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-xl transition-all">
                     {/* Team Name */}
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                      {ts?.teamName}
+                      {cl?.class_name}
                     </h3>
 
-                    {/* Team Leader */}
-                    {ts?.teamLeader && (
+                    {/* Class Fees */}
+                    {
+                      // ts?.teamLeader && 
+                      (
                       <p className="text-sm text-gray-600 mb-1">
-                        <span className="font-medium">Team Leader:</span>{" "}
-                        {ts?.teamLeader?.name}
+                        <span className="font-medium">Monthly Fee:</span>{" "}
+                        {cl?.fee}
                       </p>
                     )}
 
-                    {/* Team Members */}
+                    {/* Total Students */}
                     <p className="text-sm text-gray-600 mb-1">
-                      <span className="font-medium">Team Members:</span>{" "}
-                      {ts?.members?.length || 0}
-                    </p>
-
-                    {/* Total Tasks */}
-                    <p className="text-sm text-gray-600 mb-1">
-                      <span className="font-medium">Total Tasks:</span>{" "}
-                      {ts?.tasks?.length || 0}
-                    </p>
-
-                    {/* Tasks Completed */}
-                    <p className="text-sm text-gray-600 mt-auto">
-                      <span className="font-medium">Tasks Completed:</span>{" "}
-                      {ts?.tasks?.filter((t) => t?.status === STATUS.COMPLETED).length || 0}
+                      <span className="font-medium">Total Students:</span>{" "}
+                      {cl?.students?.length || 0}
                     </p>
                   </div>
                 </Link>

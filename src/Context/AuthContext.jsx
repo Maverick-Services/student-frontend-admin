@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { teamsData, users } from "../data/dummy";
+import {  users } from "../data/dummy";
+import { CLASSES, STUDENTS, TEACHERS } from "../utils/constants";
 
 export const AuthContext = createContext();
 
@@ -8,8 +9,9 @@ function AuthContextProvider({children}){
     const [admin, setAdmin] = useState(
         localStorage?.getItem("user") ? JSON.parse(localStorage?.getItem("user")) : null
     )
-    const [employees, setEmployees] = useState(users);
-    const [teams, setTeams] = useState(teamsData);
+    const [employees, setEmployees] = useState(STUDENTS);
+    const [teachers, setTeachers] = useState(TEACHERS);
+    const [teams, setTeams] = useState(CLASSES);
     const [team, setTeam] = useState(null);
     const [editTeam, setEditTeam] = useState(false);
     const [user, setUser] = useState(null);
@@ -32,6 +34,7 @@ function AuthContextProvider({children}){
     let values = {
         admin, setAdmin,
         employees, setEmployees,
+        teachers,setTeachers,
         teams, setTeams,
         team, setTeam,
         editTeam, setEditTeam,

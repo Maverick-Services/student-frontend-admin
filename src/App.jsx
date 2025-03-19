@@ -14,6 +14,9 @@ import Employees from './components/core/dashboard/Employees'
 import Teams from './components/core/dashboard/Teams'
 import OpenRoute from './components/core/auth/OpenRoute'
 import PrivateRoute from './components/core/auth/PrivateRoute'
+import { AddTeacher } from './components/core/dashboard/teacher/AddUser'
+import { EditTeacherDetails } from './components/core/dashboard/teacher/EditUserDetails'
+import Teachers from './components/core/dashboard/Teachers'
 
 function App() {
   return (
@@ -38,10 +41,13 @@ function App() {
           {/* <Route path='/dashboard/addAdmin' element={<AddAdmin/>}/> */}
           {/* <Route path='/dashboard/editAdminDetails/:userId' element={<EditAdminDetails/>}/> */}
           <Route path='/dashboard/addStudent' element={<AddUser/>}/>
-          <Route path='/dashboard/users/:empId' element={<EditUserDetails/>}/>
+          <Route path='/dashboard/students/:empId' element={<EditUserDetails/>}/>
           <Route path='/dashboard/student' element={<Employees/>}/>
+          <Route path='/dashboard/addTeacher' element={<AddTeacher/>}/>
+          <Route path='/dashboard/teachers/:empId' element={<EditTeacherDetails/>}/>
+          <Route path='/dashboard/teacher' element={<Teachers/>}/>
           <Route path='/dashboard/addClass' element={<AddTeam/>}/>
-          <Route path='/dashboard/teams/:teamId' element={<EditTeamDetails/>}/>
+          <Route path='/dashboard/class/:teamId' element={<EditTeamDetails/>}/>
           <Route path='/dashboard/class' element={<Teams/>}/>
           <Route
           path='*'
