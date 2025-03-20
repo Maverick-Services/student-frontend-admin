@@ -8,13 +8,14 @@ import { Spinner } from "../../../common/Spinner";
 import { createUser, editUserDetails } from "../../../../services/operations/userAPI";
 import { CLASSES, ROUTES } from "../../../../utils/constants";
 import { ROLE } from "../../../../utils/constants";
+import { getRandomId } from "../../../../utils/randomIdGenerator";
 
 export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails }) => {
 
   const navigate = useNavigate();
-  const { token, setLoading, loading } = useContext(AuthContext);
+  const { token, setLoading, loading, setEmployees } = useContext(AuthContext);
   const [teams,setTeams] = useState(CLASSES);
-  const [currentRole, setCurrentRole] = useState(ROLE.EMPLOYEE);
+  const [currentRoute, setCurrentRoute] = useState(ROUTES[0]);
 
   const {
     handleSubmit,
@@ -72,7 +73,7 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
         // const result = await editUserDetails(reqBody, token);
         const result = null;
         if (result) {
-          navigate("/dashboard/users");
+          navigate("/dashboard/student");
         }
         return;
       } else {
@@ -85,12 +86,18 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
       ...data,
     };
 
-    // console.log(data)
     // const response = await createUser(data, token);
-    const response = null;
+    const response = {...data, _id:getRandomId(), route:currentRoute};
+    // console.log(response)
     if (response) {
+      setEmployees(prev => (
+        [
+          ...prev,
+          response
+        ]
+      ))
       // console.log("User created Successfully", response);
-      navigate('/dashboard/users');
+      navigate('/dashboard/student');
     }
   };
 
@@ -171,14 +178,14 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
           <label className="text-gray-600 font-medium">Phone Number</label>
           <input
             type="tel"
-            {...register("phoneNo", { required: true })}
+            {...register("phoneNumber", { required: true })}
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
           />
         </div>
 
         {/* Class */}
         {
-          !editUser && currentRole !== ROLE.ADMIN &&
+          !editUser && 
           <div className="flex flex-col gap-1">
             <label className="w-40 font-medium text-gray-700">Class</label>
             <select
@@ -203,7 +210,7 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
 
         {/* ROUTE */}
         {
-          !editUser &&
+          // !editUser &&
           <div className="flex flex-col gap-1">
           <label className="font-medium text-gray-700">Route</label>
           <select
@@ -213,15 +220,15 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
                 message:"Route is required"
             }
             })}
-            defaultValue={currentRole}
-            onChange={(e) => setCurrentRole(e.target.value)}
+            defaultValue={currentRoute}
+            onChange={(e) => setCurrentRoute(e.target.value)}
             name="route"
             id="route"
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
           >
             {
               ROUTES.map((rt,index)=>{
-                  return <option key={index} value={rt?._id}>
+                  return <option key={index} value={rt}>
                         {rt?.route} - Fee: Rs.{rt?.fee}
                       </option>
               })

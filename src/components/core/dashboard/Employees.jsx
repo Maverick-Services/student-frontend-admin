@@ -14,6 +14,7 @@ const Employees = () => {
   const { token, loading, setLoading, employees, setEmployees } = useContext(AuthContext);
   // const [employees, setEmployees] = useState([]);
 
+  // console.log(employees)
   const fetchEmployees = async () => {
     setLoading(true);
     const result = await fetchAllEmployees(token);

@@ -9,7 +9,9 @@ function AuthContextProvider({children}){
     const [admin, setAdmin] = useState(
         localStorage?.getItem("user") ? JSON.parse(localStorage?.getItem("user")) : null
     )
-    const [employees, setEmployees] = useState(STUDENTS);
+    const [employees, setEmployees] = useState(
+        localStorage?.getItem("students") ? JSON.parse(localStorage?.getItem("students")) : STUDENTS
+    );
     const [teachers, setTeachers] = useState(TEACHERS);
     const [teams, setTeams] = useState(CLASSES);
     const [team, setTeam] = useState(null);
@@ -30,6 +32,11 @@ function AuthContextProvider({children}){
         admin && localStorage.setItem("user",JSON.stringify(admin));
         // setTeam(JSON.parse(localStorage.getItem("team")));
     },[admin]);
+
+    useEffect(()=>{
+        employees && localStorage.setItem("students",JSON.stringify(employees));
+        // setTeam(JSON.parse(localStorage.getItem("team")));
+    },[employees]);
 
     let values = {
         admin, setAdmin,

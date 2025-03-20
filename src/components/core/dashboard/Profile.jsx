@@ -5,11 +5,43 @@ import student from "../../../assets/students.png"
 import teacher from "../../../assets/teachers.png"
 import classes from "../../../assets/classes.png"
 import fee from "../../../assets/fee.png"
+import { ChartComponent } from "./ProfileChart";
 
 export const Profile = () => {
 
   const {admin} = useContext(AuthContext);
   // console.log(admin)
+
+  
+  const getRandomColors = (numColors)=>{
+    const colors = [];
+    for(let i=0; i<numColors; i++){
+      const color = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+      // console.log(color);
+      colors.push(color);
+    }
+    return colors;
+  }
+
+  const chartData1 = {
+    labels: ["Total Students","Total Teachers","Total Classes"],
+    datasets:[
+      {
+        data: [350,50,20],
+        backgroundColor: getRandomColors(3)
+      }
+    ]
+  }
+  
+  const chartData2 = {
+    labels: ["Students with Fees Paid","Students with Fees not Paid"],
+    datasets:[
+      {
+        data: [300,50],
+        backgroundColor: getRandomColors(2)
+      }
+    ]
+  }
 
   return (
     <div className="w-full h-full flex lg:items-center justify-center">
@@ -30,12 +62,9 @@ export const Profile = () => {
         </motion.h1>
 
         {/* Profile Details */}
-        <div className="space-y-4 w-full py-4 flex items-center max-sm:flex-col sm:justify-center lg:justify-between flex-wrap gap-4">
-          <ProfileItem label="Total Students" value={450} img={student} />
-          <ProfileItem label="Total Teachers" value={40} img={teacher} />
-          <ProfileItem label="Total Classes" value={30} img={classes} />
-          <ProfileItem label="Students Fee Paid" value={400} img={fee} />
-          <ProfileItem label="Students Fee Remaining" value={50} img={fee} />
+        <div className="space-y-4 w-full py-4 flex items-center max-lg:flex-col justify-center gap-2">
+          <ChartComponent data={chartData1} />
+          <ChartComponent data={chartData2} />
         </div>
 
         {/* Notice Board */}
@@ -53,7 +82,7 @@ export const Profile = () => {
             >
             Notices
           </motion.h1>
-          <div className="w-full min-h-[200px] flex flex-col items-center justify-center p-4 bg-white shadow-sm gap-4">
+          <div className="w-full min-h-[200px] flex flex-col items-center justify-center p-4 bg-white shadow-sm gap-4 rounded-sm">
             <p className="text-center">          
               No Notices Yet
             </p>
