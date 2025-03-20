@@ -59,7 +59,7 @@ export const Sidebar = ({ isOpen, setIsSidebarOpen, setShowCalender }) => {
           onClick={() => setShowCalender(true)}
         >
           <span className={`${isOpen ? "block" : "hidden"} md:block`}>
-            Calender
+            Calendar
           </span>
         </button>
       </div>
