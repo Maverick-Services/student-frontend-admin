@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AuthContext } from "../../../Context/AuthContext";
 import { fetchAllEmployees } from "../../../services/operations/userAPI";
 import { Spinner } from "../../common/Spinner";
+import { ROUTES } from "../../../utils/constants";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -11,7 +12,7 @@ const cardVariants = {
 };
 
 const Employees = () => {
-  const { token, loading, setLoading, employees, setEmployees } = useContext(AuthContext);
+  const { token, loading, setLoading, employees, setEmployees, teams } = useContext(AuthContext);
   // const [employees, setEmployees] = useState([]);
 
   // console.log(employees)
@@ -27,6 +28,18 @@ const Employees = () => {
   useEffect(() => {
     // fetchEmployees();
   }, []);
+
+  const getClass = (id)=>{
+    const classData = teams?.filter(cl => cl?._id === id)[0];
+    // console.log(classData);
+    return classData;
+  }
+
+  const getRoute = (route)=>{
+    const routeData = ROUTES?.filter(rt => rt?.route === route)[0];
+    // console.log(classData);
+    return routeData;
+  }
 
   if (loading || !employees) return <Spinner />;
 
@@ -63,7 +76,7 @@ const Employees = () => {
                   <h3 className="text-lg font-semibold text-gray-800 break-words whitespace-normal">
                     Name: {st?.name}
                   </h3>
-                  <p className="text-gray-600">{st?.class?.class_name}</p>
+                  <p className="text-gray-600">{getClass(st?.class)?.class_name}</p>
                   <p className="text-gray-600 break-words whitespace-normal">
                     Father: {st?.fatherName}
                   </p>
@@ -74,7 +87,7 @@ const Employees = () => {
                     {st?.email}
                   </p>
                   <p className="text-gray-600">Mobile No: {st?.phoneNumber}</p>
-                  <p className="text-gray-600">Route: {st?.route?.route}</p>
+                  <p className="text-gray-600">Route: {getRoute(st?.route)?.route}</p>
                   {/* <p className="text-gray-600">
                     Tasks Assigned:{" "}
                     <span className="font-semibold text-[#1C398E]">

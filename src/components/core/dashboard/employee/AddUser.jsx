@@ -13,8 +13,7 @@ import { getRandomId } from "../../../../utils/randomIdGenerator";
 export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails }) => {
 
   const navigate = useNavigate();
-  const { token, setLoading, loading, setEmployees } = useContext(AuthContext);
-  const [teams,setTeams] = useState(CLASSES);
+  const { token, setLoading, loading, setEmployees, teams, setTeams } = useContext(AuthContext);
   const [currentRoute, setCurrentRoute] = useState(ROUTES[0]);
 
   const {
@@ -87,7 +86,7 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
     };
 
     // const response = await createUser(data, token);
-    const response = {...data, _id:getRandomId(), route:currentRoute};
+    const response = {...data, _id:getRandomId()};
     // console.log(response)
     if (response) {
       setEmployees(prev => (
@@ -96,6 +95,10 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
           response
         ]
       ))
+      let allClasses = teams;
+      let classIndex = allClasses?.findIndex(cl => cl?._id === response?.class);
+      allClasses[classIndex]?.students?.push(response?._id);
+      setTeams(allClasses);
       // console.log("User created Successfully", response);
       navigate('/dashboard/student');
     }
@@ -103,6 +106,8 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
 
   if(loading || !teams)
     return <Spinner/>
+  
+  // console.log(teams)
 
   return (
     <motion.div
@@ -228,7 +233,7 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
           >
             {
               ROUTES.map((rt,index)=>{
-                  return <option key={index} value={rt}>
+                  return <option key={index} value={rt?.route}>
                         {rt?.route} - Fee: Rs.{rt?.fee}
                       </option>
               })

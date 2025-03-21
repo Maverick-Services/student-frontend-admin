@@ -9,13 +9,13 @@ import { createUser, editUserDetails } from "../../../../services/operations/use
 import { CLASSES, ROUTES } from "../../../../utils/constants";
 import { ROLE } from "../../../../utils/constants";
 import { SUBJECTS } from './../../../../utils/constants';
+import { getRandomId } from "../../../../utils/randomIdGenerator";
 
 export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails }) => {
 
   const navigate = useNavigate();
-  const { token, setLoading, loading } = useContext(AuthContext);
-  const [teams,setTeams] = useState(CLASSES);
-  const [currentRole, setCurrentRole] = useState(ROLE.EMPLOYEE);
+  const { token, setLoading, loading, setTeachers, teams, setTeams } = useContext(AuthContext);
+  const [currentSubject, setCurrentSubject] = useState(SUBJECTS[0]);
 
   const {
     handleSubmit,
@@ -25,15 +25,15 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
     formState: { errors },
   } = useForm();
 
-  const fetchTeams = async()=>{
-    setLoading(true);
-    const result = await fetchAllTeams(token);
-    if(result){
-      setTeams(result);
-    }
+  // const fetchTeams = async()=>{
+  //   setLoading(true);
+  //   const result = await fetchAllTeams(token);
+  //   if(result){
+  //     setTeams(result);
+  //   }
     
-    setLoading(false);
-  }
+  //   setLoading(false);
+  // }
 
   useEffect(() => {
     if (editUser) {
@@ -73,7 +73,7 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
         // const result = await editUserDetails(reqBody, token);
         const result = null;
         if (result) {
-          navigate("/dashboard/users");
+          navigate("/dashboard/teacher");
         }
         return;
       } else {
@@ -84,15 +84,27 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
 
     data = {
       ...data,
+      _id: getRandomId()
     };
 
     // console.log(data)
     // const response = await createUser(data, token);
-    const response = null;
+    const response = data;
     if (response) {
+      setTeachers(prev => (
+        [
+          ...prev,
+          response
+        ]
+      ))
+      let allClasses = teams;
+      let classIndex = allClasses?.findIndex(cl => cl?._id === response?.class);
+      allClasses[classIndex]?.teachers?.push(response?._id);
+      setTeams(allClasses);
       // console.log("User created Successfully", response);
-      navigate('/dashboard/users');
+      navigate('/dashboard/teacher');
     }
+    // console.log("Local Storage",JSON.parse(localStorage.getItem("classes")));
   };
 
   if(loading || !teams)
@@ -152,18 +164,16 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
           <label className="text-gray-600 font-medium">Phone Number</label>
           <input
             type="tel"
-            {...register("phoneNo", { required: true })}
+            {...register("phoneNumber", { required: true })}
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
           />
         </div>
 
         {/* Class */}
         {
-          !editUser && currentRole !== ROLE.ADMIN &&
           <div className="flex flex-col gap-1">
             <label className="w-40 font-medium text-gray-700">Class</label>
             <select
-              // onChange={stepInputChangeHandler}
               {...register("class",{required:true})}
               defaultValue={teams && teams[0]?._id}
               name="class"
@@ -184,7 +194,6 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
 
         {/* SUBJECT */}
         {
-          // !editUser &&
           <div className="flex flex-col gap-1">
           <label className="font-medium text-gray-700">Subject</label>
           <select
@@ -194,8 +203,7 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
                 message:"Subject is required"
             }
             })}
-            defaultValue={currentRole}
-            onChange={(e) => setCurrentRole(e.target.value)}
+            defaultValue={currentSubject}
             name="subject"
             id="subject"
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"

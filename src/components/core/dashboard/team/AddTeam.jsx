@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { ROLE } from "../../../../utils/constants";
 import { motion } from "framer-motion";
 import { createTeam, editTeamDetails } from "../../../../services/operations/teamAPI";
+import { getRandomId } from "../../../../utils/randomIdGenerator";
 
 export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTeamDetails }) => {
   const navigate = useNavigate();
-  const { admin,token } = useContext(AuthContext);
+  const { admin,token, teams, setTeams } = useContext(AuthContext);
 
   const {
     handleSubmit,
@@ -28,7 +29,6 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
 
   const isFormUpdated = () => {
     const currentValues = getValues();
-    console.log()
     return (
       team?.teamName !== currentValues?.teamName ||
       team?.description !== currentValues?.description ||
@@ -70,15 +70,22 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
 
     data = {
       ...data,
-      adminEmail: admin?.email,
+      _id: getRandomId(),
+      students:[],
+      teachers:[]
     };
-    // console.log(data);
 
     // const response = await createTeam(data,token);
-    const response = null;
+    const response = data;
     if (response) {
       // console.log("Team created Successfully", response);
-      navigate("/dashboard/teams");
+      setTeams(prev => (
+        [
+          ...prev,
+          response
+        ]
+      ))
+      navigate("/dashboard/class");
     }
   };
 
@@ -107,12 +114,12 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
         className="flex flex-col gap-6"
         onSubmit={handleSubmit(teamFormSubmitHandler)}
       >
-        {/* Team Name */}
+        {/* Class Name */}
         <div className="flex items-center gap-4">
           <label className="w-40 font-medium text-gray-700">Class Name</label>
           <input
             type="text"
-            {...register("teamName", { required: true })}
+            {...register("class_name", { required: true })}
             className="flex-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#1C398E] transition"
           />
         </div>
@@ -122,7 +129,7 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
           <label className="w-40 font-medium text-gray-700">Monthly Fees</label>
           <input
             type="text"
-            {...register("description", { required: true })}
+            {...register("fee", { required: true })}
             className="flex-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#1C398E] transition"
           />
         </div>

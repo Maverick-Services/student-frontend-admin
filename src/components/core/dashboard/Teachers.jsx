@@ -11,7 +11,7 @@ const cardVariants = {
 };
 
 const Teachers = () => {
-  const { token, loading, setLoading, teachers, setTeachers } = useContext(AuthContext);
+  const { token, loading, setLoading, teachers, teams } = useContext(AuthContext);
   // const [employees, setEmployees] = useState([]);
 
   // const fetchEmployees = async () => {
@@ -26,6 +26,12 @@ const Teachers = () => {
   useEffect(() => {
     // fetchEmployees();
   }, []);
+
+  const getClass = (id)=>{
+    const classData = teams?.filter(cl => cl?._id === id)[0];
+    // console.log(classData);
+    return classData;
+  }
 
   if (loading || !teachers) return <Spinner />;
 
@@ -46,9 +52,9 @@ const Teachers = () => {
             No Teachers added yet
           </motion.p>
         ) : (
-          teachers?.map((st) => (
+          teachers?.map((st,index) => (
             <motion.div
-              key={st?._id}
+              key={index}
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -66,7 +72,8 @@ const Teachers = () => {
                     {st?.email}
                   </p>
                   <p className="text-gray-600">Mobile No: {st?.phoneNumber}</p>
-                  <p className="text-gray-600">{st?.class?.class_name}</p>
+                  <p className="text-gray-600">Subject: {st?.subject}</p>
+                  <p className="text-gray-600">{getClass(st?.class)?.class_name}</p>
                 </div>
               </Link>
             </motion.div>

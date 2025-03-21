@@ -12,8 +12,12 @@ function AuthContextProvider({children}){
     const [employees, setEmployees] = useState(
         localStorage?.getItem("students") ? JSON.parse(localStorage?.getItem("students")) : STUDENTS
     );
-    const [teachers, setTeachers] = useState(TEACHERS);
-    const [teams, setTeams] = useState(CLASSES);
+    const [teams, setTeams] = useState(
+        localStorage?.getItem("classes") ? JSON.parse(localStorage?.getItem("classes")) : CLASSES
+    );
+    const [teachers, setTeachers] = useState(
+        localStorage?.getItem("teachers") ? JSON.parse(localStorage?.getItem("teachers")) : TEACHERS
+    );
     const [team, setTeam] = useState(null);
     const [editTeam, setEditTeam] = useState(false);
     const [user, setUser] = useState(null);
@@ -37,6 +41,17 @@ function AuthContextProvider({children}){
         employees && localStorage.setItem("students",JSON.stringify(employees));
         // setTeam(JSON.parse(localStorage.getItem("team")));
     },[employees]);
+
+    useEffect(()=>{
+        teachers && localStorage.setItem("teachers",JSON.stringify(teachers));
+        // setTeam(JSON.parse(localStorage.getItem("team")));
+    },[teachers]);
+
+    useEffect(()=>{
+        teams && localStorage.setItem("classes",JSON.stringify(teams));
+        // console.log(JSON.parse(localStorage.getItem("classes")))
+        // setTeam(JSON.parse(localStorage.getItem("team")));
+    },[teams]);
 
     let values = {
         admin, setAdmin,

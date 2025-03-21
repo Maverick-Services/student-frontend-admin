@@ -21,6 +21,7 @@ const Teams = () => {
 
   useEffect(() => {
     // fetchTeams();
+
     // eslint-disable-next-line
   }, []);
 
@@ -92,6 +93,12 @@ const Teams = () => {
                     <p className="text-sm text-gray-600 mb-1">
                       <span className="font-medium">Total Students:</span>{" "}
                       {cl?.students?.length || 0}
+                    </p>
+
+                    {/* Total Teachers */}
+                    <p className="text-sm text-gray-600 mb-1">
+                      <span className="font-medium">Total Teachers:</span>{" "}
+                      {cl?.teachers?.length || 0}
                     </p>
                   </div>
                 </Link>
