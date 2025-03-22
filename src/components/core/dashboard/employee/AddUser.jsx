@@ -99,6 +99,7 @@ export const AddUser = ({ user, editUser, setShowUserDetails, showUserDetails })
       let classIndex = allClasses?.findIndex(cl => cl?._id === response?.class);
       allClasses[classIndex]?.students?.push(response?._id);
       setTeams(allClasses);
+      localStorage.setItem("classes",JSON.stringify(allClasses));
       // console.log("User created Successfully", response);
       navigate('/dashboard/student');
     }
