@@ -5,9 +5,10 @@ import { AuthContext } from "../../../Context/AuthContext";
 import { fetchAllEmployees } from "../../../services/operations/userAPI";
 import { Spinner } from "../../common/Spinner";
 import { ROUTES } from "../../../utils/constants";
+import LayoutProvider from "../../common/LayoutProvider";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
@@ -29,13 +30,13 @@ const Employees = () => {
     // fetchEmployees();
   }, []);
 
-  const getClass = (id)=>{
+  const getClass = (id) => {
     const classData = teams?.filter(cl => cl?._id === id)[0];
     // console.log(classData);
     return classData;
   }
 
-  const getRoute = (route)=>{
+  const getRoute = (route) => {
     const routeData = ROUTES?.filter(rt => rt?.route === route)[0];
     // console.log(classData);
     return routeData;
@@ -44,63 +45,67 @@ const Employees = () => {
   if (loading || !employees) return <Spinner />;
 
   return (
-    <div className="w-full min-h-screen p-6 bg-gray-100 flex flex-col gap-6">
-      <h1 className="text-2xl font-semibold text-[#1C398E]">All Students</h1>
-
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
-      >
-        {employees && employees.length === 0 ? (
-          <motion.p
-            variants={cardVariants}
-            className="text-gray-600 text-lg text-center col-span-full"
-          >
-            No Students added yet
-          </motion.p>
-        ) : (
-          employees?.map((st) => (
-            <motion.div
-              key={st?._id}
+    <LayoutProvider heading={"Manage Students"}>
+      <div className="w-full min-h-screen bg-gray-100 flex flex-col gap-6">
+      <div className="flex w-full justify-between items-center">
+          <h1 className="text-2xl font-semibold text-[#1C398E]">All Students</h1>
+          <p className="text-blue-900 font-semibold">Total: {employees?.length}</p>
+        </div>
+        <motion.div initial="hidden" animate="visible" className="w-full overflow-x-auto">
+          {employees && employees.length === 0 ? (
+            <motion.p
               variants={cardVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full max-w-[350px] flex-1 flex justify-center"
+              className="text-gray-600 text-lg text-center py-8"
             >
-              <Link
-                to={"#"} 
-                // to={`/dashboard/students/${st?._id}`} 
-                className="w-full">
-                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col gap-2 transition-all hover:shadow-xl min-h-[280px] xl:min-h-[230px] h-auto">
-                  <h3 className="text-lg font-semibold text-gray-800 break-words whitespace-normal">
-                    Name: {st?.name}
-                  </h3>
-                  <p className="text-gray-600">{getClass(st?.class)?.class_name}</p>
-                  <p className="text-gray-600 break-words whitespace-normal">
-                    Father: {st?.fatherName}
-                  </p>
-                  <p className="text-gray-600 break-words whitespace-normal">
-                    Mother: {st?.motherName}
-                  </p>
-                  <p className="text-gray-600 break-words whitespace-normal">
-                    {st?.email}
-                  </p>
-                  <p className="text-gray-600">Mobile No: {st?.phoneNumber}</p>
-                  <p className="text-gray-600">Route: {getRoute(st?.route)?.route}</p>
-                  {/* <p className="text-gray-600">
-                    Tasks Assigned:{" "}
-                    <span className="font-semibold text-[#1C398E]">
-                      {em?.tasks?.length}
-                    </span>
-                  </p> */}
-                </div>
-              </Link>
-            </motion.div>
-          ))
-        )}
-      </motion.div>
-    </div>
+              No Students added yet
+            </motion.p>
+          ) : (
+            <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden ">
+              <thead className="bg-gray-200">
+                <tr>
+                <th className="py-3 px-4 text-left font-medium text-gray-700">#</th>
+                <th className="py-3 px-4 text-left font-medium text-gray-700">Name</th>
+                  <th className="py-3 px-4 text-left font-medium text-gray-700">Class</th>
+                  <th className="py-3 px-4 text-left font-medium text-gray-700">Father's Name</th>
+                  <th className="py-3 px-4 text-left font-medium text-gray-700">Mother's Name</th>
+                  <th className="py-3 px-4 text-left font-medium text-gray-700">Email</th>
+                  <th className="py-3 px-4 text-left font-medium text-gray-700">Mobile No</th>
+                  <th className="py-3 px-4 text-left font-medium text-gray-700">Route</th>
+                </tr>
+              </thead>
+              <tbody>
+                {employees?.map((employee, index) => (
+                  <motion.tr
+                    key={employee?._id}
+                    variants={cardVariants}
+                    whileTap={{ scale: 0.98 }}
+                    className="border-b last:border-0 transition-all duration-200 hover:bg-gray-100 even:bg-gray-50"
+                  >
+                    <td className="py-3 px-4 text-gray-600">{index + 1}</td>
+                    <td className="py-3 px-4 text-gray-800">
+                      <Link to={"#"} className="hover:underline">
+                        {employee?.name}
+                      </Link>
+                    </td>
+                    <td className="py-3 px-4 text-gray-600">
+                      {getClass(employee?.class)?.class_name}
+                    </td>
+                    <td className="py-3 px-4 text-gray-600">{employee?.fatherName}</td>
+                    <td className="py-3 px-4 text-gray-600">{employee?.motherName}</td>
+                    <td className="py-3 px-4 text-gray-600">{employee?.email}</td>
+                    <td className="py-3 px-4 text-gray-600">{employee?.phoneNumber}</td>
+                    <td className="py-3 px-4 text-gray-600">
+                      {getRoute(employee?.route)?.route}
+                    </td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </motion.div>
+
+      </div>
+    </LayoutProvider>
   );
 };
 

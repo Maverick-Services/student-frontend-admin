@@ -6,6 +6,7 @@ import teacher from "../../../assets/teachers.png"
 import classes from "../../../assets/classes.png"
 import fee from "../../../assets/fee.png"
 import { ChartComponent } from "./ProfileChart";
+import LayoutProvider from "../../common/LayoutProvider";
 
 export const Profile = () => {
 
@@ -44,7 +45,8 @@ export const Profile = () => {
   }
 
   return (
-    <div className="w-full h-full flex lg:items-center justify-center">
+    <LayoutProvider heading={'Dashboard'}>
+    <div className="w-full flex flex-col h-full gap-3 lg:items-center justify-center">
       <motion.div
         className="w-full h-full flex flex-col gap-4 items-start"
         initial={{ opacity: 0, scale: 0.9 }}
@@ -90,6 +92,7 @@ export const Profile = () => {
         </motion.div>
       </motion.div>
     </div>
+    </LayoutProvider>
   );
 };
 

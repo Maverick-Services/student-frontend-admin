@@ -17,7 +17,7 @@ function OpenRoute({ children }) {
     return children
   } else {
     // console.log(token);
-    return <Navigate to={'/dashboard/profile'}/>
+    return <Navigate to={'/dashboard'}/>
   }
 }
 

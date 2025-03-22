@@ -37,7 +37,7 @@ function App() {
             </PrivateRoute>
           }
         >
-          <Route path='/dashboard/profile' element={<Profile/>}/>
+          <Route path='/dashboard' element={<Profile/>}/>
           {/* <Route path='/dashboard/addAdmin' element={<AddAdmin/>}/> */}
           {/* <Route path='/dashboard/editAdminDetails/:userId' element={<EditAdminDetails/>}/> */}
           <Route path='/dashboard/addStudent' element={<AddUser/>}/>
