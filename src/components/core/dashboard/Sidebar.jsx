@@ -70,7 +70,7 @@ export const Sidebar = ({ isOpen, setIsSidebarOpen, setShowCalender }) => {
       </div>
       <button
         onClick={() => logout(navigate, setAdmin, setToken)}
-        className="bg-gray-200 text-[#1C398E] font-semibold px-4 py-2 rounded-md hover:bg-gray-300 transition cursor-pointer"
+        className="bg-blue-700 text-white font-semibold px-4 py-2 rounded-md hover:bg-gray-300 hover:text-[#1C398E] transition cursor-pointer"
       >
         Logout
       </button>

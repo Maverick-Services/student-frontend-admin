@@ -61,16 +61,16 @@ const Employees = () => {
             </motion.p>
           ) : (
             <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden ">
-              <thead className="bg-gray-200">
+              <thead className="bg-blue-700 text-white">
                 <tr>
-                <th className="py-3 px-4 text-left font-medium text-gray-700">#</th>
-                <th className="py-3 px-4 text-left font-medium text-gray-700">Name</th>
-                  <th className="py-3 px-4 text-left font-medium text-gray-700">Class</th>
-                  <th className="py-3 px-4 text-left font-medium text-gray-700">Father's Name</th>
-                  <th className="py-3 px-4 text-left font-medium text-gray-700">Mother's Name</th>
-                  <th className="py-3 px-4 text-left font-medium text-gray-700">Email</th>
-                  <th className="py-3 px-4 text-left font-medium text-gray-700">Mobile No</th>
-                  <th className="py-3 px-4 text-left font-medium text-gray-700">Route</th>
+                <th className="py-3 px-4 text-left font-medium ">Sno</th>
+                <th className="py-3 px-4 text-left font-medium">Name</th>
+                  <th className="py-3 pl-2 pr-6 text-left font-medium">Class</th>
+                  <th className="py-3 px-4 text-left font-medium">Father's Name</th>
+                  <th className="py-3 px-4 text-left font-medium">Mother's Name</th>
+                  <th className="py-3 px-4 text-left font-medium">Email</th>
+                  <th className="py-3 px-4 text-left font-medium">Mobile No</th>
+                  <th className="py-3 px-4 text-left font-medium">Route</th>
                 </tr>
               </thead>
               <tbody>
@@ -87,8 +87,8 @@ const Employees = () => {
                         {employee?.name}
                       </Link>
                     </td>
-                    <td className="py-3 px-4 text-gray-600">
-                      {getClass(employee?.class)?.class_name}
+                    <td className="py-2  text-gray-600">
+                      <span className="p-2 py-1 text-sm font-semibold rounded-full bg-yellow-200">{getClass(employee?.class)?.class_name}</span>
                     </td>
                     <td className="py-3 px-4 text-gray-600">{employee?.fatherName}</td>
                     <td className="py-3 px-4 text-gray-600">{employee?.motherName}</td>
