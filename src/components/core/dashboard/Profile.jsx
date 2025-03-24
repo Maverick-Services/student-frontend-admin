@@ -46,7 +46,7 @@ export const Profile = () => {
 
   return (
     <LayoutProvider heading={'Dashboard'}>
-    <div className="w-full flex flex-col h-full gap-3 lg:items-center justify-center">
+    <div className="w-full flex flex-col gap-3 lg:items-center justify-center">
       <motion.div
         className="w-full h-full flex flex-col gap-4 items-start"
         initial={{ opacity: 0, scale: 0.9 }}
