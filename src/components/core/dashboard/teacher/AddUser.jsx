@@ -10,6 +10,7 @@ import { CLASSES, ROUTES } from "../../../../utils/constants";
 import { ROLE } from "../../../../utils/constants";
 import { SUBJECTS } from './../../../../utils/constants';
 import { getRandomId } from "../../../../utils/randomIdGenerator";
+import LayoutProvider from "../../../common/LayoutProvider";
 
 export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails }) => {
 
@@ -112,122 +113,124 @@ export const AddTeacher = ({ user, editUser, setShowUserDetails, showUserDetails
     return <Spinner/>
 
   return (
-    <motion.div
-      /** Framer Motion On-Load Animation */
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="w-full max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md"
-    >
-      {/* Heading */}
-      <div className="w-full flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-[#1C398E]">{editUser ? "Edit" : "Add"} Teacher</h1>
-        {
-          editUser && <button
-            onClick={() => setShowUserDetails(!showUserDetails)}
-            className="bg-[#1C398E] text-white px-4 py-2 rounded-md hover:bg-[#142A6E] transition"
-          >
-            Cancel
-          </button>
-        }
-      </div>
-
-      {/* Form */}
-      <form
-        className="flex flex-col gap-4"
-        onSubmit={handleSubmit(userFormSubmitHandler)}
+    <LayoutProvider heading={'Manage Teachers'}>
+      <motion.div
+        /** Framer Motion On-Load Animation */
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md"
       >
-        {/* Name Field */}
-        <div className="flex flex-col gap-1">
-          <label className="text-gray-600 font-medium">Name</label>
-          <input
-            type="text"
-            {...register("name", { required: true })}
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
-          />
+        {/* Heading */}
+        <div className="w-full flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-bold text-[#1C398E]">{editUser ? "Edit" : "Add"} Teacher</h1>
+          {
+            editUser && <button
+              onClick={() => setShowUserDetails(!showUserDetails)}
+              className="bg-[#1C398E] text-white px-4 py-2 rounded-md hover:bg-[#142A6E] transition"
+            >
+              Cancel
+            </button>
+          }
         </div>
-       
-        {/* Email Field */}
-        {
-          !editUser &&
+
+        {/* Form */}
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit(userFormSubmitHandler)}
+        >
+          {/* Name Field */}
           <div className="flex flex-col gap-1">
-            <label className="text-gray-600 font-medium">Email</label>
+            <label className="text-gray-600 font-medium">Name</label>
             <input
-              type="email"
-              {...register("email", { required: true })}
+              type="text"
+              {...register("name", { required: true })}
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
             />
           </div>
-        }
+        
+          {/* Email Field */}
+          {
+            !editUser &&
+            <div className="flex flex-col gap-1">
+              <label className="text-gray-600 font-medium">Email</label>
+              <input
+                type="email"
+                {...register("email", { required: true })}
+                className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
+              />
+            </div>
+          }
 
-        {/* Phone Number Field */}
-        <div className="flex flex-col gap-1">
-          <label className="text-gray-600 font-medium">Phone Number</label>
-          <input
-            type="tel"
-            {...register("phoneNumber", { required: true })}
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
-          />
-        </div>
-
-        {/* Class */}
-        {
+          {/* Phone Number Field */}
           <div className="flex flex-col gap-1">
-            <label className="w-40 font-medium text-gray-700">Class</label>
+            <label className="text-gray-600 font-medium">Phone Number</label>
+            <input
+              type="tel"
+              {...register("phoneNumber", { required: true })}
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
+            />
+          </div>
+
+          {/* Class */}
+          {
+            <div className="flex flex-col gap-1">
+              <label className="w-40 font-medium text-gray-700">Class</label>
+              <select
+                {...register("class",{required:true})}
+                defaultValue={teams && teams[0]?._id}
+                name="class"
+                id="class"
+                className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
+              >
+                {
+                  teams &&
+                  teams.map(cl=>{
+                    return <option key={cl?._id} value={cl?._id}>
+                        {cl?.class_name} - Fee: Rs.{cl?.fee}
+                    </option>
+                  })
+                }
+              </select>
+            </div>
+          }
+
+          {/* SUBJECT */}
+          {
+            <div className="flex flex-col gap-1">
+            <label className="font-medium text-gray-700">Subject</label>
             <select
-              {...register("class",{required:true})}
-              defaultValue={teams && teams[0]?._id}
-              name="class"
-              id="class"
+              {...register("subject",{
+              required:{
+                  value:true,
+                  message:"Subject is required"
+              }
+              })}
+              defaultValue={currentSubject}
+              name="subject"
+              id="subject"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
             >
               {
-                teams &&
-                teams.map(cl=>{
-                  return <option key={cl?._id} value={cl?._id}>
-                      {cl?.class_name} - Fee: Rs.{cl?.fee}
-                  </option>
+                Object.values(SUBJECTS).map((sj,index)=>{
+                    return <option key={index} value={sj}>
+                          {sj}
+                        </option>
                 })
               }
             </select>
           </div>
-        }
+          }
 
-        {/* SUBJECT */}
-        {
-          <div className="flex flex-col gap-1">
-          <label className="font-medium text-gray-700">Subject</label>
-          <select
-            {...register("subject",{
-            required:{
-                value:true,
-                message:"Subject is required"
-            }
-            })}
-            defaultValue={currentSubject}
-            name="subject"
-            id="subject"
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-[#1C398E] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#142A6E] transition"
           >
-            {
-              Object.values(SUBJECTS).map((sj,index)=>{
-                  return <option key={index} value={sj}>
-                        {sj}
-                      </option>
-              })
-            }
-          </select>
-        </div>
-        }
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-[#1C398E] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#142A6E] transition"
-        >
-          Submit
-        </button>
-      </form>
-    </motion.div>
+            Submit
+          </button>
+        </form>
+      </motion.div>
+    </LayoutProvider>
   );
 };

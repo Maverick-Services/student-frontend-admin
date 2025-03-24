@@ -6,6 +6,7 @@ import { ROLE } from "../../../../utils/constants";
 import { motion } from "framer-motion";
 import { createTeam, editTeamDetails } from "../../../../services/operations/teamAPI";
 import { getRandomId } from "../../../../utils/randomIdGenerator";
+import LayoutProvider from "../../../common/LayoutProvider";
 
 export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTeamDetails }) => {
   const navigate = useNavigate();
@@ -90,88 +91,90 @@ export const AddTeam = ({ team, editTeam, employees, setShowTeamDetails, showTea
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="w-full max-w-3xl p-8 mx-auto bg-white shadow-lg rounded-lg flex flex-col gap-6"
-    >
-      {/* Heading */}
-      <div className="w-full flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-[#1C398E]">{editTeam ? "Edit" : "Add"} Class</h1>
-        {
-          editTeam && <button
-          onClick={() => setShowTeamDetails(!showTeamDetails)}
-          className="bg-[#1C398E] text-white px-4 py-2 rounded-md hover:bg-[#142A6E] transition"
-        >
-          Cancel
-        </button>
-        }
-      </div>
-      
-      {/* Form */}
-      <form
-        className="flex flex-col gap-6"
-        onSubmit={handleSubmit(teamFormSubmitHandler)}
+    <LayoutProvider heading={'Manage Classes'}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-3xl p-8 mx-auto bg-white shadow-lg rounded-lg flex flex-col gap-6"
       >
-        {/* Class Name */}
-        <div className="flex items-center gap-4">
-          <label className="w-40 font-medium text-gray-700">Class Name</label>
-          <input
-            type="text"
-            {...register("class_name", { required: true })}
-            className="flex-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#1C398E] transition"
-          />
+        {/* Heading */}
+        <div className="w-full flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-bold text-[#1C398E]">{editTeam ? "Edit" : "Add"} Class</h1>
+          {
+            editTeam && <button
+            onClick={() => setShowTeamDetails(!showTeamDetails)}
+            className="bg-[#1C398E] text-white px-4 py-2 rounded-md hover:bg-[#142A6E] transition"
+          >
+            Cancel
+          </button>
+          }
         </div>
-
-        {/* Class Monthly Fee */}
-        <div className="flex items-center gap-4">
-          <label className="w-40 font-medium text-gray-700">Monthly Fees</label>
-          <input
-            type="text"
-            {...register("fee", { required: true })}
-            className="flex-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#1C398E] transition"
-          />
-        </div>
-
-        {/* Team Leader */}
-        {/* {
-          editTeam && 
-          <div className="flex items-center gap-4">
-            <label className="w-40 font-medium text-gray-700">Team Leader</label>
-            <select
-              // onChange={stepInputChangeHandler}
-              {...register("teamLeader")}
-              defaultValue={team?.teamLeader?._id ? team?.teamLeader?._id: ""}
-              name="teamLeader"
-              id="teamLeader"
-              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
-            >
-              <option value={""}>
-                Select Team Leader
-              </option>
-              {
-                employees &&
-                employees.map(em=>{
-                  return <option key={em?._id} value={em?._id}>
-                      {em?.name}
-                  </option>
-                })
-              }
-            </select>
-          </div>
-        } */}
-
-        {/* Submit Button */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          type="submit"
-          className="w-full bg-[#1C398E] text-white py-3 rounded-md font-semibold hover:bg-[#142A6E] transition"
+        
+        {/* Form */}
+        <form
+          className="flex flex-col gap-6"
+          onSubmit={handleSubmit(teamFormSubmitHandler)}
         >
-          Submit
-        </motion.button>
-      </form>
-    </motion.div>
+          {/* Class Name */}
+          <div className="flex items-center gap-4">
+            <label className="w-40 font-medium text-gray-700">Class Name</label>
+            <input
+              type="text"
+              {...register("class_name", { required: true })}
+              className="flex-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#1C398E] transition"
+            />
+          </div>
+
+          {/* Class Monthly Fee */}
+          <div className="flex items-center gap-4">
+            <label className="w-40 font-medium text-gray-700">Monthly Fees</label>
+            <input
+              type="text"
+              {...register("fee", { required: true })}
+              className="flex-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#1C398E] transition"
+            />
+          </div>
+
+          {/* Team Leader */}
+          {/* {
+            editTeam && 
+            <div className="flex items-center gap-4">
+              <label className="w-40 font-medium text-gray-700">Team Leader</label>
+              <select
+                // onChange={stepInputChangeHandler}
+                {...register("teamLeader")}
+                defaultValue={team?.teamLeader?._id ? team?.teamLeader?._id: ""}
+                name="teamLeader"
+                id="teamLeader"
+                className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#1C398E]"
+              >
+                <option value={""}>
+                  Select Team Leader
+                </option>
+                {
+                  employees &&
+                  employees.map(em=>{
+                    return <option key={em?._id} value={em?._id}>
+                        {em?.name}
+                    </option>
+                  })
+                }
+              </select>
+            </div>
+          } */}
+
+          {/* Submit Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            type="submit"
+            className="w-full bg-[#1C398E] text-white py-3 rounded-md font-semibold hover:bg-[#142A6E] transition"
+          >
+            Submit
+          </motion.button>
+        </form>
+      </motion.div>
+    </LayoutProvider>
   );
 };

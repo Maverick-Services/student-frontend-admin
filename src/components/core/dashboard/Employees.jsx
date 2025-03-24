@@ -47,9 +47,15 @@ const Employees = () => {
   return (
     <LayoutProvider heading={"Manage Students"}>
       <div className="w-full min-h-screen bg-gray-100 flex flex-col gap-6">
-      <div className="flex w-full justify-between items-center">
+        <div className="flex w-full justify-between items-center">
           <h1 className="text-2xl font-semibold text-[#1C398E]">All Students</h1>
-          <p className="text-blue-900 font-semibold">Total: {employees?.length}</p>
+          <div className="flex w-fit gap-3 items-center">
+            <Link to={'/dashboard/addStudent'} 
+              className="bg-blue-700 text-white text-sm font-bold px-4 py-2 rounded-full hover:scale-[0.96] transition cursor-pointer">
+              <span>Add Student</span>
+            </Link>
+            <p className="text-blue-900 font-semibold">Total: {employees?.length}</p>
+          </div>
         </div>
         <motion.div initial="hidden" animate="visible" className="w-full overflow-x-auto">
           {employees && employees.length === 0 ? (

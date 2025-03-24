@@ -33,14 +33,16 @@ const Teams = () => {
       <div className=" bg-gray-100">
         <div className="max-w-7xl mx-auto flex flex-col justify-center gap-6">
           {/* Page Heading */}
-          {/* <motion.h1
-            className="text-3xl font-bold text-[#1C398E] mb-8 text-center"
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            All Classes
-          </motion.h1> */}
+          <div className="flex w-full justify-between items-center">
+            <h1 className="text-2xl font-semibold text-[#1C398E]">All Classes</h1>
+            <div className="flex w-fit gap-3 items-center">
+              <Link to={'/dashboard/addClass'} 
+                className="bg-blue-700 text-white text-sm font-bold px-4 py-2 rounded-full hover:scale-[0.96] transition cursor-pointer">
+                <span>Create Class</span>
+              </Link>
+              <p className="text-blue-900 font-semibold">Total: {teams?.length}</p>
+            </div>
+          </div>
           {/* Teams Grid */}
           <motion.div
             initial="hidden"
