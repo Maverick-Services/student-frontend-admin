@@ -65,6 +65,8 @@ import { IoHome } from "react-icons/io5";
 import { PiStudentDuotone } from "react-icons/pi";
 import { FaUser } from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
+import { BsCashCoin } from "react-icons/bs";
+
 
 export const sideBarLinks = [
     {
@@ -86,5 +88,10 @@ export const sideBarLinks = [
         name: "Class",
         path: "/dashboard/class",
         icon: GiTeacher
-    }
+    },
+    {
+        name: "Fees",
+        path: "/dashboard/fees",
+        icon: BsCashCoin
+    },
 ];

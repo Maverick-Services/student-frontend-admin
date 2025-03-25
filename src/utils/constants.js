@@ -804,3 +804,1652 @@ export const TEACHERS = [
     "subject": "Maths"
   }
 ]
+
+
+// export const FEE_DETAILS =[ {
+//   "_id": "640fea96f8a7d64f7b6e4a4f", 
+//   "batch": "2025-2026",
+//   "class": "640fea96f8a7d64f7b6e4a4e", 
+//   "total_amount": 60000,
+//   "installments": [
+//     {
+//       "installment_id": "640fea96f8a7d64f7b6e4a4f_1",
+//       "installment_number": 1,
+//       "due_date": "2025-04-01",
+//       "amount": 5000,
+//       "payment_status": "Paid",
+//       "paid_on": "2025-04-05",
+//       "receipt_number": "RCPT202504001",
+//       "payment_method": "Bank Transfer"
+//     },
+//     {
+//       "installment_id": "640fea96f8a7d64f7b6e4a4f_2",
+//       "installment_number": 2,
+//       "due_date": "2025-05-01",
+//       "amount": 5000,
+//       "payment_status": "Paid",
+//       "paid_on": "2025-05-03",
+//       "receipt_number": "RCPT202505001",
+//       "payment_method": "UPI"
+//     },
+//     {
+//       "installment_id": "640fea96f8a7d64f7b6e4a4f_3",
+//       "installment_number": 3,
+//       "due_date": "2025-06-01",
+//       "amount": 5000,
+//       "payment_status": "Paid",
+//       "paid_on": "2025-06-02",
+//       "receipt_number": "RCPT202506001",
+//       "payment_method": "Cash"
+//     },
+//     {
+//       "installment_id": "640fea96f8a7d64f7b6e4a4f_4",
+//       "installment_number": 4,
+//       "due_date": "2025-07-01",
+//       "amount": 5000,
+//       "payment_status": "Pending",
+//       "paid_on": null,
+//       "receipt_number": null,
+//       "payment_method": null
+//     },
+//   ],
+//   "student": "640fea96f8a7d64f7b6e4a4f", 
+//   "paid": 15000,
+//   "pending": 45000,
+//   "Created At": "2025-03-15T10:30:00Z",
+//   "Updated At": "2025-06-05T14:45:00Z",
+// },
+// ]
+
+export const FEE_DETAILS = [
+  {
+    "_id": "640fe1e2f8a7d64f7b6e4a19_fee",
+    "batch": "2025-2026",
+    "class": "640fe1e2f8a7d64f7b6e4a18",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a19_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT202504019",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a19_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT202505019",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a19_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a19_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe1e2f8a7d64f7b6e4a19",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-05T14:45:00Z"
+  },
+  {
+    "_id": "640fe1e2f8a7d64f7b6e4a1a_fee",
+    "batch": "2025-2026",
+    "class": "640fe1e2f8a7d64f7b6e4a18",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1a_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT20250401A",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1a_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1a_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1a_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe1e2f8a7d64f7b6e4a1a",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T09:15:00Z"
+  },
+  {
+    "_id": "640fe1e2f8a7d64f7b6e4a1b_fee",
+    "batch": "2025-2026",
+    "class": "640fe1e2f8a7d64f7b6e4a18",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1b_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT20250401B",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1b_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-01",
+        "receipt_number": "RCPT20250501B",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1b_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-01",
+        "receipt_number": "RCPT20250601B",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe1e2f8a7d64f7b6e4a1b_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe1e2f8a7d64f7b6e4a1b",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-02T11:20:00Z"
+  },
+  {
+    "_id": "640fe2d4f8a7d64f7b6e4a1f_fee",
+    "batch": "2025-2026",
+    "class": "640fe2d4f8a7d64f7b6e4a1e",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a1f_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-10",
+        "receipt_number": "RCPT20250401F",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a1f_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a1f_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a1f_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe2d4f8a7d64f7b6e4a1f",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-11T08:30:00Z"
+  },
+  {
+    "_id": "640fe2d4f8a7d64f7b6e4a20_fee",
+    "batch": "2025-2026",
+    "class": "640fe2d4f8a7d64f7b6e4a1e",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a20_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504020",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a20_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-01",
+        "receipt_number": "RCPT202505020",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a20_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-01",
+        "receipt_number": "RCPT202506020",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a20_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-25",
+        "receipt_number": "RCPT202506025",
+        "payment_method": "Bank Transfer"
+      }
+    ],
+    "student": "640fe2d4f8a7d64f7b6e4a20",
+    "paid": 20000,
+    "pending": 40000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-26T10:15:00Z"
+  },
+  {
+    "_id": "640fe2d4f8a7d64f7b6e4a21_fee",
+    "batch": "2025-2026",
+    "class": "640fe2d4f8a7d64f7b6e4a1e",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a21_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-15",
+        "receipt_number": "RCPT202504021",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a21_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-15",
+        "receipt_number": "RCPT202505021",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a21_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe2d4f8a7d64f7b6e4a21_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe2d4f8a7d64f7b6e4a21",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-16T13:20:00Z"
+  },
+  {
+    "_id": "640fe3e6f8a7d64f7b6e4a25_fee",
+    "batch": "2025-2026",
+    "class": "640fe3e6f8a7d64f7b6e4a24",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a25_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-02",
+        "receipt_number": "RCPT202504025",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a25_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-02",
+        "receipt_number": "RCPT202505025",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a25_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-02",
+        "receipt_number": "RCPT202506025",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a25_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe3e6f8a7d64f7b6e4a25",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-03T09:45:00Z"
+  },
+  {
+    "_id": "640fe3e6f8a7d64f7b6e4a26_fee",
+    "batch": "2025-2026",
+    "class": "640fe3e6f8a7d64f7b6e4a24",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a26_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a26_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a26_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a26_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe3e6f8a7d64f7b6e4a26",
+    "paid": 0,
+    "pending": 60000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-03-15T10:30:00Z"
+  },
+  {
+    "_id": "640fe3e6f8a7d64f7b6e4a27_fee",
+    "batch": "2025-2026",
+    "class": "640fe3e6f8a7d64f7b6e4a24",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a27_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504027",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a27_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-01",
+        "receipt_number": "RCPT202505027",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a27_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe3e6f8a7d64f7b6e4a27_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe3e6f8a7d64f7b6e4a27",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-02T11:10:00Z"
+  },
+  {
+    "_id": "640fe4d8f8a7d64f7b6e4a2b_fee",
+    "batch": "2025-2026",
+    "class": "640fe4d8f8a7d64f7b6e4a2a",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2b_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT20250402B",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2b_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-05",
+        "receipt_number": "RCPT20250502B",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2b_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2b_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe4d8f8a7d64f7b6e4a2b",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-06T14:20:00Z"
+  },
+  {
+    "_id": "640fe4d8f8a7d64f7b6e4a2c_fee",
+    "batch": "2025-2026",
+    "class": "640fe4d8f8a7d64f7b6e4a2a",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2c_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT20250402C",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2c_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2c_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2c_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe4d8f8a7d64f7b6e4a2c",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T10:45:00Z"
+  },
+  {
+    "_id": "640fe4d8f8a7d64f7b6e4a2d_fee",
+    "batch": "2025-2026",
+    "class": "640fe4d8f8a7d64f7b6e4a2a",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2d_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-10",
+        "receipt_number": "RCPT20250402D",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2d_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-10",
+        "receipt_number": "RCPT20250502D",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2d_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-10",
+        "receipt_number": "RCPT20250602D",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe4d8f8a7d64f7b6e4a2d_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-28",
+        "receipt_number": "RCPT20250628D",
+        "payment_method": "Cash"
+      }
+    ],
+    "student": "640fe4d8f8a7d64f7b6e4a2d",
+    "paid": 20000,
+    "pending": 40000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-29T12:30:00Z"
+  },
+  {
+    "_id": "640fe5f9f8a7d64f7b6e4a31_fee",
+    "batch": "2025-2026",
+    "class": "640fe5f9f8a7d64f7b6e4a30",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a31_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504031",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a31_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a31_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a31_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe5f9f8a7d64f7b6e4a31",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T09:30:00Z"
+  },
+  {
+    "_id": "640fe5f9f8a7d64f7b6e4a32_fee",
+    "batch": "2025-2026",
+    "class": "640fe5f9f8a7d64f7b6e4a30",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a32_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT202504032",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a32_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT202505032",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a32_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a32_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe5f9f8a7d64f7b6e4a32",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-04T11:20:00Z"
+  },
+  {
+    "_id": "640fe5f9f8a7d64f7b6e4a33_fee",
+    "batch": "2025-2026",
+    "class": "640fe5f9f8a7d64f7b6e4a30",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a33_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT202504033",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a33_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-05",
+        "receipt_number": "RCPT202505033",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a33_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-05",
+        "receipt_number": "RCPT202506033",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe5f9f8a7d64f7b6e4a33_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe5f9f8a7d64f7b6e4a33",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-06T14:15:00Z"
+  },
+  {
+    "_id": "640fe6e2f8a7d64f7b6e4a37_fee",
+    "batch": "2025-2026",
+    "class": "640fe6e2f8a7d64f7b6e4a36",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a37_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504037",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a37_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a37_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a37_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe6e2f8a7d64f7b6e4a37",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T10:20:00Z"
+  },
+  {
+    "_id": "640fe6e2f8a7d64f7b6e4a38_fee",
+    "batch": "2025-2026",
+    "class": "640fe6e2f8a7d64f7b6e4a36",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a38_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT202504038",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a38_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT202505038",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a38_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a38_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe6e2f8a7d64f7b6e4a38",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-04T11:30:00Z"
+  },
+  {
+    "_id": "640fe6e2f8a7d64f7b6e4a39_fee",
+    "batch": "2025-2026",
+    "class": "640fe6e2f8a7d64f7b6e4a36",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a39_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT202504039",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a39_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-05",
+        "receipt_number": "RCPT202505039",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a39_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-05",
+        "receipt_number": "RCPT202506039",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe6e2f8a7d64f7b6e4a39_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe6e2f8a7d64f7b6e4a39",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-06T14:45:00Z"
+  },
+  {
+    "_id": "640fe7d3f8a7d64f7b6e4a3d_fee",
+    "batch": "2025-2026",
+    "class": "640fe7d3f8a7d64f7b6e4a3c",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3d_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT20250403D",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3d_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3d_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3d_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe7d3f8a7d64f7b6e4a3d",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T09:45:00Z"
+  },
+  {
+    "_id": "640fe7d3f8a7d64f7b6e4a3e_fee",
+    "batch": "2025-2026",
+    "class": "640fe7d3f8a7d64f7b6e4a3c",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3e_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT20250403E",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3e_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT20250503E",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3e_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3e_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe7d3f8a7d64f7b6e4a3e",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-04T11:45:00Z"
+  },
+  {
+    "_id": "640fe7d3f8a7d64f7b6e4a3f_fee",
+    "batch": "2025-2026",
+    "class": "640fe7d3f8a7d64f7b6e4a3c",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3f_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT20250403F",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3f_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-05",
+        "receipt_number": "RCPT20250503F",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3f_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-05",
+        "receipt_number": "RCPT20250603F",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe7d3f8a7d64f7b6e4a3f_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe7d3f8a7d64f7b6e4a3f",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-06T15:00:00Z"
+  },
+  {
+    "_id": "640fe8c4f8a7d64f7b6e4a43_fee",
+    "batch": "2025-2026",
+    "class": "640fe8c4f8a7d64f7b6e4a42",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a43_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504043",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a43_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a43_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a43_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe8c4f8a7d64f7b6e4a43",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T10:00:00Z"
+  },
+  {
+    "_id": "640fe8c4f8a7d64f7b6e4a44_fee",
+    "batch": "2025-2026",
+    "class": "640fe8c4f8a7d64f7b6e4a42",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a44_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT202504044",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a44_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT202505044",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a44_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a44_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe8c4f8a7d64f7b6e4a44",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-04T12:15:00Z"
+  },
+  {
+    "_id": "640fe8c4f8a7d64f7b6e4a45_fee",
+    "batch": "2025-2026",
+    "class": "640fe8c4f8a7d64f7b6e4a42",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a45_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT202504045",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a45_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-05",
+        "receipt_number": "RCPT202505045",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a45_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-05",
+        "receipt_number": "RCPT202506045",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fe8c4f8a7d64f7b6e4a45_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe8c4f8a7d64f7b6e4a45",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-06T15:30:00Z"
+  },
+  {
+    "_id": "640fe9b5f8a7d64f7b6e4a49_fee",
+    "batch": "2025-2026",
+    "class": "640fe9b5f8a7d64f7b6e4a48",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a49_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504049",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a49_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a49_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a49_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe9b5f8a7d64f7b6e4a49",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T10:30:00Z"
+  },
+  {
+    "_id": "640fe9b5f8a7d64f7b6e4a4a_fee",
+    "batch": "2025-2026",
+    "class": "640fe9b5f8a7d64f7b6e4a48",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4a_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT20250404A",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4a_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT20250504A",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4a_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4a_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe9b5f8a7d64f7b6e4a4a",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-04T12:45:00Z"
+  },
+  {
+    "_id": "640fe9b5f8a7d64f7b6e4a4b_fee",
+    "batch": "2025-2026",
+    "class": "640fe9b5f8a7d64f7b6e4a48",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4b_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT20250404B",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4b_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-05",
+        "receipt_number": "RCPT20250504B",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4b_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-05",
+        "receipt_number": "RCPT20250604B",
+        "payment_method": "Cheque"
+      },
+      {
+        "installment_id": "640fe9b5f8a7d64f7b6e4a4b_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fe9b5f8a7d64f7b6e4a4b",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-06T16:00:00Z"
+  },
+  {
+    "_id": "640fea96f8a7d64f7b6e4a4f_fee",
+    "batch": "2025-2026",
+    "class": "640fea96f8a7d64f7b6e4a4e",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a4f_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-05",
+        "receipt_number": "RCPT20250404F",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a4f_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT20250504F",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a4f_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-06-02",
+        "receipt_number": "RCPT20250604F",
+        "payment_method": "Cash"
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a4f_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fea96f8a7d64f7b6e4a4f",
+    "paid": 15000,
+    "pending": 45000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-06-05T14:45:00Z"
+  },
+  {
+    "_id": "640fea96f8a7d64f7b6e4a50_fee",
+    "batch": "2025-2026",
+    "class": "640fea96f8a7d64f7b6e4a4e",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a50_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-01",
+        "receipt_number": "RCPT202504050",
+        "payment_method": "Bank Transfer"
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a50_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a50_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a50_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fea96f8a7d64f7b6e4a50",
+    "paid": 5000,
+    "pending": 55000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-04-02T11:00:00Z"
+  },
+  {
+    "_id": "640fea96f8a7d64f7b6e4a51_fee",
+    "batch": "2025-2026",
+    "class": "640fea96f8a7d64f7b6e4a4e",
+    "total_amount": 60000,
+    "installments": [
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a51_1",
+        "installment_number": 1,
+        "due_date": "2025-04-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-04-03",
+        "receipt_number": "RCPT202504051",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a51_2",
+        "installment_number": 2,
+        "due_date": "2025-05-01",
+        "amount": 5000,
+        "payment_status": "Paid",
+        "paid_on": "2025-05-03",
+        "receipt_number": "RCPT202505051",
+        "payment_method": "UPI"
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a51_3",
+        "installment_number": 3,
+        "due_date": "2025-06-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      },
+      {
+        "installment_id": "640fea96f8a7d64f7b6e4a51_4",
+        "installment_number": 4,
+        "due_date": "2025-07-01",
+        "amount": 5000,
+        "payment_status": "Pending",
+        "paid_on": null,
+        "receipt_number": null,
+        "payment_method": null
+      }
+    ],
+    "student": "640fea96f8a7d64f7b6e4a51",
+    "paid": 10000,
+    "pending": 50000,
+    "Created At": "2025-03-15T10:30:00Z",
+    "Updated At": "2025-05-04T13:15:00Z"
+  }
+];

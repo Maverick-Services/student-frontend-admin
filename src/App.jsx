@@ -17,6 +17,7 @@ import PrivateRoute from './components/core/auth/PrivateRoute'
 import { AddTeacher } from './components/core/dashboard/teacher/AddUser'
 import { EditTeacherDetails } from './components/core/dashboard/teacher/EditUserDetails'
 import Teachers from './components/core/dashboard/Teachers'
+import Fees from './pages/Fees'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path='/dashboard/addClass' element={<AddTeam/>}/>
           <Route path='/dashboard/class/:teamId' element={<EditTeamDetails/>}/>
           <Route path='/dashboard/class' element={<Teams/>}/>
+          <Route path='/dashboard/fees' element={<Fees/>}/>
           <Route
           path='*'
           element={<p>404 Error - Page Not Found</p>}
